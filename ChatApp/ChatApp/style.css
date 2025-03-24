@@ -1,0 +1,520 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: #111820;
+}
+
+button,
+input {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Form Container */
+.form-container,
+.container {
+  max-width: 460px;
+  min-width: 460px;
+  padding: 30px;
+  background: transparent;
+  border-radius: 8px;
+  position: relative;
+}
+.container-users{
+  max-width: 460px;
+  min-width: 460px;
+  padding: 30px;
+  background: #b2bdca;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Form Styles */
+.form header,
+.chat-area header .details span {
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(214, 211, 211, 0.96);
+  margin-bottom: 6px;
+}
+
+.form h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 254, 254, 0.4);
+  margin-bottom: 30px;
+}
+
+.form form {
+  margin: 25px 0;
+}
+
+.form form .error-text {
+  color: red;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  background: lightgoldenrodyellow;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.form form .name-details {
+  display: flex;
+}
+
+.form .name-details .field:first-child {
+  margin-right: 12px;
+}
+
+.form .name-details .field:last-child {
+  margin-left: 12px;
+}
+
+.form form .field {
+  display: flex;
+  margin-bottom: 12px;
+  flex-direction: column;
+  position: relative;
+}
+
+.form form .field label {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  color: rgb(255 255 255 / 40%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form form .input input,
+.users .search input,
+.typing-area input {
+  height: 60px;
+  width: 100%;
+  font-size: 17px;
+  padding: 0 24px;
+  border-bottom: 2px solid #2b3442;
+  color: rgb(186, 185, 185);
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  transform: translate(-10px, -30px) scale(0.875);
+  color: #216ce7;
+}
+
+input:focus {
+  border-color: #216ce7;
+}
+
+.form form .field i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.form form .button input,
+.users .logout,
+.typing-area button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 24px;
+  border-radius: 6px;
+  background: #216ce7;
+  color: #f9f9f9;
+  font-family: inherit;
+  font-weight: 600;
+  height: 50px;
+  margin-top: 14px;
+}
+
+.form .link {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 17px;
+  color: #9e9eaf;
+}
+
+.form .link a {
+  color: #216ce7;
+  text-decoration: none;
+}
+
+.form .link a:hover {
+  text-decoration: underline;
+}
+
+
+/*---------------------------------*/
+/* Users List CSS */
+.users {
+ max-height: 500px;
+  min-height: 500px;
+  height: 600px; /* Add a fixed height to the container */
+  display: flex;
+  flex-direction: column;
+}
+
+.users header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.users .content {
+  display: flex;
+  align-items: center;
+}
+
+.users .details {
+  margin-left: 20px;
+}
+
+.users .details span {
+  font-size: 21px;
+  font-weight: 500;
+  font-weight: bold;
+}
+
+.users .details p {
+  color: #0f0f13;
+
+}
+
+.users .logout {
+  display: block;
+  background: #000;
+  color: #fff;
+  padding: 7px 15px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 1px;
+}
+
+.users .search {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.users .search .text {
+  font-size: 16px;
+  color: #111;
+}
+
+.users .search input {
+  flex: 1;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.users .search input.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.users .search button {
+  width: 50px;
+  height: 40px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search input::placeholder {
+  color: #5a4f4f; /* Specify the color you want */
+}
+
+/* Change color of text in input field when active */
+.search input:focus {
+  color: #2e2828; /* Specify the color you want */
+}
+
+.users .search button i {
+  font-size: 18px;
+}
+
+.users .search button.active {
+  background: #f00;
+}
+
+.users-list-container {
+  flex: 1;
+  overflow: hidden; /* Hide scrollbar */
+}
+
+.users-list {
+  overflow-y: scroll; /* Enable scrolling */
+  height: 100%;
+  padding-right: 17px; /* Account for scrollbar width */
+}
+
+.users-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.users-list a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: rgba(107, 138, 108, 0.3);
+  border-radius: 5px;
+  border-color: rgba(127, 127, 133, 0.99);
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: transparent;
+  transition: background 0.3s ease;
+}
+
+.users-list a:hover {
+  background: #d0dddd;
+}
+
+.users-list a .content {
+  display: flex;
+  align-items: center;
+}
+
+.users-list a .details {
+  margin-left: 20px;
+}
+
+.users-list a .details span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111;
+}
+
+.users-list a .details p {
+  font-size: 14px;
+  color: #4b4b4e;
+
+}
+
+.users-list a .status-dot {
+  font-size: 12px;
+  color: green;
+  margin-left: 200px;
+}
+
+.users-list a .status-dot.offline {
+  color: red;
+  margin-left: 200px;
+}
+
+/* Chat Area CSS */
+.chat-container {
+  max-width: 460px;
+  min-width: 460px;
+}
+
+.chat-area header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: rgba(165, 193, 205, 0.96);
+  border-radius: 8px 8px 0 0;
+}
+
+.chat-area header .back-icon {
+  color: #333;
+  font-size: 24px;
+}
+
+.chat-area header .details {
+  margin-left: 20px;
+}
+
+.chat-area header .details span {
+  font-size: 24px; /* Adjust font size */
+  font-weight: 600;
+  color: rgba(243, 240, 240, 0.96);
+}
+
+.chat-area header .details p {
+  color: #67676a;
+  font-size: 14px;
+}
+
+.chat-box {
+  position: relative;
+  min-height: 400px; /* Adjust min-height */
+  max-height: 400px; /* Adjust max-height */
+  overflow-y: auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.chat-box .chat {
+  margin: 15px 0;
+}
+
+.chat-box .chat p {
+  word-wrap: break-word;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #f3f3f3;
+  color: #333;
+}
+
+.chat-box .outgoing {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-box .outgoing .details {
+  max-width: calc(100% - 130px);
+}
+
+.outgoing .details p {
+  background: lightgreen;
+  color: white;
+  border-radius: 15px 15px 0 15px;
+}
+
+.chat-box .incoming {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-box .incoming .details {
+  max-width: calc(100% - 130px);
+}
+
+.incoming .details p {
+  background: #cac6c6;
+  color: #333;
+  border-radius: 15px 15px 15px 0;
+}
+
+.typing-area {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #f3f3f3;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+}
+
+.typing-area input {
+  flex: 1;
+  height: 45px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.typing-area input::placeholder {
+  color: #403636; /* Specify the color you want */
+}
+
+/* Change color of text in input field when active */
+.typing-area input:focus {
+  color: #2e2828; /* Specify the color you want */
+}
+
+
+.typing-area button {
+  width: 50px;
+  height: 43px;
+  background: #333;
+  color: #fff;
+
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 1px;
+  cursor: pointer;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.typing-area button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+  .chat-area header .details span {
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .chat-box {
+    min-height: 300px; /* Adjust min-height */
+    max-height: 300px; /* Adjust max-height */
+  }
+
+  .chat-box .chat p {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .typing-area {
+    padding: 15px;
+  }
+
+  .typing-area input {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .typing-area button {
+    width: 45px;
+    height: 40px;
+  }
+}
+
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
