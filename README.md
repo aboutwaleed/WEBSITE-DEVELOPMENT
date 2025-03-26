@@ -1,4 +1,6 @@
-This is a complete web based chat app build with html, css, javascript, PHP and AJAX. 
+This is a complete web based chat app build with html, css, javascript to make frontend.
+Used PHP for backend logic. 
+It uses AJAX to make app asynchronous. 
 
 
 ![image](https://github.com/user-attachments/assets/819c041f-894c-4cbc-8f17-015e90529b42)
