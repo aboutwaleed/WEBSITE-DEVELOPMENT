@@ -1,5 +1,5 @@
 This is a complete web based chat app build with html, css, javascript to make frontend.
-Used PHP for backend logic. 
+Used PHP for backend logic and mySql for database.
 It uses AJAX to make app asynchronous. 
 
 
